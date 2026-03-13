@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "name": "EC-OMS (이커머스 주문관리시스템)",
+    "description": "무신사, 29CM 등 멀티 채널 주문을 통합 관리하는 내부 OMS 시스템의 백엔드 개발 및 운영",
+    "period": "2023.03 ~ 현재",
+    "role": "백엔드 개발",
+    "teamSize": "백엔드 4명, 프론트 2명",
+    "techStack": "Spring Boot, JPA, MyBatis, PostgreSQL, Oracle, AWS SQS, Docker",
+    "highlights": "- 클레임(반품/교환) 도메인 전체 재설계 및 구현\n- 헥사고날 아키텍처 기반 도메인 분리\n- SQS 이벤트 기반 비동기 처리 파이프라인 구축\n- 3PL WMS 내재화 프로젝트 주도\n- 로젠 택배 차세대 API 연동",
+    "challenges": "- 레거시 프로시저를 Spring Boot API로 전환하면서 데이터 정합성 유지\n- 멀티 데이터소스(PostgreSQL + Oracle) 환경에서의 트랜잭션 관리\n- 멀티 채널 x 멀티 브랜드 정산 데이터 정합성 보장",
+    "impact": "- 클레임 처리 자동화율 향상\n- API 응답 시간 개선\n- 운영 장애 대응 시간 단축\n- 3년간 1,384건 이상의 지라 티켓 처리",
+    "sortOrder": 1
+  }
+]
