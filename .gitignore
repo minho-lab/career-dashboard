@@ -1,0 +1,18 @@
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Env
+.env
+frontend/.env
+
+# OS
+.DS_Store
+
+# Claude
+.claude/
