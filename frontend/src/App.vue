@@ -18,7 +18,6 @@ const navLinks = [
   { to: '/dashboard', label: 'Dashboard' },
   { to: '/contact', label: 'Contact' },
   { to: '/admin', label: 'Sync' },
-  { to: '/ai-editor', label: 'AI Editor' },
 ]
 
 const isActive = (path) => {
