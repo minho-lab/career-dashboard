@@ -9,9 +9,11 @@ const routes = [
   { path: '/achievements', name: 'Achievements', component: () => import('../views/Achievements.vue') },
   { path: '/timeline', name: 'Timeline', component: () => import('../views/Timeline.vue') },
   { path: '/tech', name: 'TechStack', component: () => import('../views/TechStack.vue') },
+  { path: '/architecture', name: 'Architecture', component: () => import('../views/SystemArchitecture.vue') },
   { path: '/dashboard', name: 'Dashboard', component: () => import('../views/Dashboard.vue') },
   { path: '/contact', name: 'Contact', component: () => import('../views/Contact.vue') },
   { path: '/admin', name: 'Admin', component: () => import('../views/Admin.vue') },
+  { path: '/ai-editor', name: 'AiEditor', component: () => import('../views/AiEditor.vue') },
 ]
 
 const router = createRouter({

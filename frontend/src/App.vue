@@ -14,9 +14,11 @@ const navLinks = [
   { to: '/achievements', label: 'Achievements' },
   { to: '/timeline', label: 'Timeline' },
   { to: '/tech', label: 'Tech' },
+  { to: '/architecture', label: 'Architecture' },
   { to: '/dashboard', label: 'Dashboard' },
   { to: '/contact', label: 'Contact' },
   { to: '/admin', label: 'Sync' },
+  { to: '/ai-editor', label: 'AI Editor' },
 ]
 
 const isActive = (path) => {
