@@ -50,9 +50,9 @@ const kpis = [
     color: 'text-amber-600 dark:text-amber-400',
   },
   {
-    metric: '1,684건 처리',
-    detail: '2023.03~현재 Jira 이슈 · 월 평균 약 42건',
-    note: '운영을 멈추지 않으며 레거시를 점진적으로 개선',
+    metric: '팀 AI 도구 플랫폼',
+    detail: '플러그인 4 · 스킬 16 · 가이드 68문서',
+    note: '팀 전체가 쓰는 Claude Code 플러그인 마켓플레이스를 직접 구축·운영',
     color: 'text-purple-600 dark:text-purple-400',
   },
 ]
