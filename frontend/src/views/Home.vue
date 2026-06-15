@@ -21,6 +21,7 @@ onMounted(async () => {
 })
 
 const skillList = computed(() => profile.value?.skills?.split(',').map(s => s.trim()) || [])
+const career = computed(() => profile.value?.career || [])
 
 // 입사연도(2017) 기준으로 연차 자동 계산 — 매년 수동 수정 불필요
 const careerYears = computed(() => {
@@ -196,6 +197,29 @@ const projectTech = computed(() =>
       <RouterLink to="/approach" class="inline-block mt-5 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 font-medium">
         기술 선택의 이유와 설계 의사결정 보기 &rarr;
       </RouterLink>
+    </section>
+
+    <!-- Career -->
+    <section v-if="career.length">
+      <h2 class="text-2xl font-bold dark:text-white mb-6">경력</h2>
+      <div class="relative pl-8">
+        <div class="absolute left-2 top-2 bottom-2 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+        <div v-for="(c, i) in career" :key="i" class="relative mb-6 last:mb-0">
+          <div
+            class="absolute -left-[26px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-white dark:border-gray-900"
+            :class="i === 0 ? 'bg-blue-500' : 'bg-gray-300 dark:bg-gray-600'"
+          ></div>
+          <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+            <h3 class="font-semibold text-gray-900 dark:text-white">{{ c.company }}</h3>
+            <span v-if="c.companyDescription" class="text-xs text-gray-400">{{ c.companyDescription }}</span>
+            <span v-if="c.period" class="text-xs text-gray-400 font-mono ml-auto">{{ c.period }}</span>
+          </div>
+          <p v-if="c.role || c.description" class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-0.5">
+            <span v-if="c.role" class="text-gray-500 dark:text-gray-300">{{ c.role }}</span>
+            <span v-if="c.role && c.description"> — </span>{{ c.description }}
+          </p>
+        </div>
+      </div>
     </section>
   </div>
 </template>

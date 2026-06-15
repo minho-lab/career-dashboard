@@ -23,29 +23,29 @@
     },
     {
       "company": "세방 이엔에스글로벌",
-      "companyDescription": "",
+      "companyDescription": "3PL 물류 기업",
       "team": "",
-      "role": "",
+      "role": "백엔드 개발",
       "period": "",
-      "description": "",
+      "description": "3PL 물류 시스템 개발·운영",
       "highlights": []
     },
     {
       "company": "신성통상",
-      "companyDescription": "",
+      "companyDescription": "패션 기업 (탑텐 등)",
       "team": "",
-      "role": "",
+      "role": "백엔드 개발",
       "period": "",
-      "description": "",
+      "description": "패션 이커머스 도메인 시스템 개발·운영",
       "highlights": []
     },
     {
       "company": "이포넷",
-      "companyDescription": "",
+      "companyDescription": "금융 SI 기업",
       "team": "",
-      "role": "",
-      "period": "2017.05 ~ ",
-      "description": "",
+      "role": "백엔드 개발",
+      "period": "2017.05 ~",
+      "description": "BC카드 대학교 연구비관리 시스템, 기업은행·한국전력거래소 발전소 대금납부 시스템 개발·운영",
       "highlights": []
     }
   ],
