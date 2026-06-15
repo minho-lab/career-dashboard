@@ -6,6 +6,7 @@ import { useDarkMode } from './composables/useDarkMode'
 const route = useRoute()
 const mobileOpen = ref(false)
 const { isDark, toggle: toggleDark } = useDarkMode()
+const year = new Date().getFullYear()
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -104,7 +105,7 @@ function exportPdf() {
 
     <footer class="border-t border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-800 no-print">
       <div class="max-w-5xl mx-auto px-6 py-6 text-center text-sm text-gray-400 dark:text-gray-600">
-        &copy; 2025 MH.dev. Built with Vue 3 + Tailwind CSS.
+        &copy; {{ year }} 송민호 · MH.dev. Built with Vue 3 + Tailwind CSS.
       </div>
     </footer>
   </div>
