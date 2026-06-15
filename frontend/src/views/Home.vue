@@ -19,6 +19,12 @@ onMounted(async () => {
 
 const skillList = computed(() => profile.value?.skills?.split(',').map(s => s.trim()) || [])
 
+// 입사연도(2017) 기준으로 연차 자동 계산 — 매년 수동 수정 불필요
+const careerYears = computed(() => {
+  const start = profile.value?.careerStartYear || 2017
+  return new Date().getFullYear() - start + 1
+})
+
 // 면접관이 30초 안에 봐야 할 비즈니스 임팩트 — 회사 전용 용어는 한 줄 풀이를 함께 표기
 const kpis = [
   {
@@ -63,7 +69,7 @@ const projectTech = computed(() =>
     <section class="text-center pt-14 pb-4">
       <div class="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
         <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
-        Backend Engineer · 10년차
+        Backend Engineer · {{ careerYears }}년차
       </div>
       <h1 class="text-5xl font-extrabold tracking-tight mb-3 dark:text-white">{{ profile.name }}</h1>
       <p class="text-lg text-gray-500 dark:text-gray-400 mb-6">
