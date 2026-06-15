@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/work', name: 'Work', component: () => import('../views/Work.vue') },
+  { path: '/ai', name: 'AI', component: () => import('../views/AI.vue') },
   { path: '/approach', name: 'Approach', component: () => import('../views/Approach.vue') },
   { path: '/contact', name: 'Contact', component: () => import('../views/Contact.vue') },
 

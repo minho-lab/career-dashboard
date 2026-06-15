@@ -10,6 +10,7 @@ const { isDark, toggle: toggleDark } = useDarkMode()
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/work', label: 'Work' },
+  { to: '/ai', label: 'AI' },
   { to: '/approach', label: 'Approach' },
   { to: '/contact', label: 'Contact' },
 ]

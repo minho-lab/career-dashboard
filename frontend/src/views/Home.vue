@@ -4,17 +4,20 @@ import { RouterLink } from 'vue-router'
 import { getProfile } from '../api/profile'
 import { getProjects } from '../api/project'
 import { getAchievements } from '../api/achievement'
+import { getAi } from '../api/ai'
 import SkillBadge from '../components/SkillBadge.vue'
 
 const profile = ref(null)
 const project = ref(null)
 const achievements = ref([])
+const aiItems = ref([])
 
 onMounted(async () => {
-  const [p, pjs, achs] = await Promise.all([getProfile(), getProjects(), getAchievements()])
+  const [p, pjs, achs, ai] = await Promise.all([getProfile(), getProjects(), getAchievements(), getAi()])
   profile.value = p
   project.value = pjs[0] || null
   achievements.value = achs
+  aiItems.value = ai.items || []
 })
 
 const skillList = computed(() => profile.value?.skills?.split(',').map(s => s.trim()) || [])
@@ -69,16 +72,17 @@ const projectTech = computed(() =>
     <section class="text-center pt-14 pb-4">
       <div class="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
         <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
-        Backend Engineer · {{ careerYears }}년차
+        Backend &amp; AI Agent Engineer · {{ careerYears }}년차
       </div>
       <h1 class="text-5xl font-extrabold tracking-tight mb-3 dark:text-white">{{ profile.name }}</h1>
       <p class="text-lg text-gray-500 dark:text-gray-400 mb-6">
-        운영을 멈추지 않고 레거시를 점진적으로 개선하는 백엔드 개발자
+        시스템을 운영하며 개선하고, 그 도메인 지식을 AI 에이전트로 옮기는 백엔드 개발자
       </p>
       <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
         이커머스 · 물류 · 패션 도메인에서 Spring Boot 기반 시스템을 설계하고 운영해왔습니다.
         레거시 프로시저를 헥사고날 아키텍처로 전환하며 측정 가능한 비즈니스 임팩트를 만들어왔고,
-        최근에는 Claude Code + MCP로 AI 기반 개발 워크플로우를 실무에 도입하고 있습니다.
+        지금은 클레임 자동화 에이전트와 팀 AI 도구 플랫폼을 직접 설계·구축하며
+        자동화의 가드레일과 거버넌스를 함께 만들고 있습니다.
       </p>
       <div class="mt-9 flex justify-center gap-3">
         <RouterLink to="/work" class="inline-flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">
@@ -154,6 +158,31 @@ const projectTech = computed(() =>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
             {{ a.metrics }}
           </span>
+        </RouterLink>
+      </div>
+    </section>
+
+    <!-- AI / Agent -->
+    <section v-if="aiItems.length">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-2xl font-bold dark:text-white">AI / Agent Engineering</h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">도메인 지식을 에이전트와 팀 도구로 옮기는 작업</p>
+        </div>
+        <RouterLink to="/ai" class="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 font-medium shrink-0">자세히 &rarr;</RouterLink>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <RouterLink
+          v-for="item in aiItems" :key="item.id"
+          to="/ai"
+          class="group block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-purple-300 dark:hover:border-purple-700 hover:shadow-md transition-all"
+        >
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">{{ item.role }}</span>
+            <span class="text-xs text-gray-400">{{ item.status }}</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 leading-snug group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">{{ item.name }}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-4">{{ item.summary }}</p>
         </RouterLink>
       </div>
     </section>
