@@ -51,7 +51,7 @@ const kpis = [
   },
   {
     metric: '1,684건 처리',
-    detail: '2023.03~현재 Jira 이슈 · 완료율 96.9%',
+    detail: '2023.03~현재 Jira 이슈 · 월 평균 약 42건',
     note: '운영을 멈추지 않으며 레거시를 점진적으로 개선',
     color: 'text-purple-600 dark:text-purple-400',
   },
