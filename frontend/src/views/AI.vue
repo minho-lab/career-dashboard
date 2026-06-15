@@ -40,6 +40,14 @@ const statusStyle = (s) => {
         </div>
         <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-5">{{ item.summary }}</p>
 
+        <!-- Metrics -->
+        <div v-if="item.metrics?.length" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+          <div v-for="m in item.metrics" :key="m.label" class="bg-gray-50 dark:bg-gray-700/40 rounded-lg p-3 text-center">
+            <p class="text-lg font-bold text-gray-900 dark:text-white">{{ m.value }}</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-tight mt-1">{{ m.label }}</p>
+          </div>
+        </div>
+
         <div class="grid md:grid-cols-2 gap-5">
           <div>
             <h3 class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">핵심 내용</h3>
