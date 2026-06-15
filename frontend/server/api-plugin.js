@@ -129,6 +129,83 @@ export default function apiPlugin() {
         }
       })
 
+      // 원티드 채용공고 조회
+      server.middlewares.use('/api/jobs/search', async (req, res) => {
+        if (req.method === 'GET') {
+          try {
+            const url = new URL(req.url, 'http://localhost')
+            const tag = url.searchParams.get('tag') || '872'  // 기본: 서버/백엔드
+            const years = url.searchParams.get('years') || '-1'
+            const offset = url.searchParams.get('offset') || '0'
+            const limit = url.searchParams.get('limit') || '20'
+
+            const apiUrl = `https://www.wanted.co.kr/api/v4/jobs?country=kr&tag_type_ids=${tag}&years=${years}&limit=${limit}&offset=${offset}&job_sort=job.latest_order`
+            const apiRes = await fetch(apiUrl, {
+              headers: { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'ko-KR,ko' }
+            })
+            if (!apiRes.ok) throw new Error(`Wanted API ${apiRes.status}`)
+            const data = await apiRes.json()
+            sendJson(res, data)
+          } catch (err) {
+            sendJson(res, { error: err.message }, 500)
+          }
+        }
+      })
+
+      // 원티드 채용공고 상세 조회
+      server.middlewares.use('/api/jobs/detail', async (req, res) => {
+        if (req.method === 'GET') {
+          try {
+            const url = new URL(req.url, 'http://localhost')
+            const id = url.searchParams.get('id')
+            if (!id) throw new Error('id 파라미터 필요')
+
+            const apiRes = await fetch(`https://www.wanted.co.kr/api/v4/jobs/${id}`, {
+              headers: { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'ko-KR,ko' }
+            })
+            if (!apiRes.ok) throw new Error(`Wanted API ${apiRes.status}`)
+            const data = await apiRes.json()
+            sendJson(res, data)
+          } catch (err) {
+            sendJson(res, { error: err.message }, 500)
+          }
+        }
+      })
+
+      // 관심 공고 저장/조회/삭제
+      server.middlewares.use('/api/jobs/bookmarks', async (req, res) => {
+        const filePath = resolve(DATA_DIR, 'job-bookmarks.json')
+        const load = () => {
+          try { return JSON.parse(readFileSync(filePath, 'utf-8')) }
+          catch { return [] }
+        }
+
+        if (req.method === 'GET') {
+          sendJson(res, load())
+        } else if (req.method === 'POST') {
+          try {
+            const body = await parseBody(req)
+            const bookmarks = load()
+            if (!bookmarks.find(b => b.id === body.id)) {
+              bookmarks.unshift({ ...body, savedAt: new Date().toISOString() })
+              writeFileSync(filePath, JSON.stringify(bookmarks, null, 2), 'utf-8')
+            }
+            sendJson(res, { success: true })
+          } catch (err) {
+            sendJson(res, { error: err.message }, 500)
+          }
+        } else if (req.method === 'DELETE') {
+          try {
+            const body = await parseBody(req)
+            const bookmarks = load().filter(b => b.id !== body.id)
+            writeFileSync(filePath, JSON.stringify(bookmarks, null, 2), 'utf-8')
+            sendJson(res, { success: true })
+          } catch (err) {
+            sendJson(res, { error: err.message }, 500)
+          }
+        }
+      })
+
       // GitHub 스타일 잔디 (로컬 git 기반)
       server.middlewares.use('/api/github/contributions', async (req, res) => {
         if (req.method === 'GET') {

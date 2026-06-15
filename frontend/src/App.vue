@@ -9,15 +9,9 @@ const { isDark, toggle: toggleDark } = useDarkMode()
 
 const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/about', label: 'About' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/achievements', label: 'Achievements' },
-  { to: '/timeline', label: 'Timeline' },
-  { to: '/tech', label: 'Tech' },
-  { to: '/architecture', label: 'Architecture' },
-  { to: '/dashboard', label: 'Dashboard' },
+  { to: '/work', label: 'Work' },
+  { to: '/approach', label: 'Approach' },
   { to: '/contact', label: 'Contact' },
-  { to: '/admin', label: 'Sync' },
 ]
 
 const isActive = (path) => {
