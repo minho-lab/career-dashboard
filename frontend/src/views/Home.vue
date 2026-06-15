@@ -50,8 +50,8 @@ const kpis = [
     color: 'text-amber-600 dark:text-amber-400',
   },
   {
-    metric: '1,384건 처리',
-    detail: '3년간 Jira 이슈 (일평균 3.4건)',
+    metric: '1,684건 처리',
+    detail: '2023.03~현재 Jira 이슈 · 완료율 96.9%',
     note: '운영을 멈추지 않으며 레거시를 점진적으로 개선',
     color: 'text-purple-600 dark:text-purple-400',
   },
