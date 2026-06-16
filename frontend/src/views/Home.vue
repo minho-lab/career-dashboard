@@ -44,9 +44,9 @@ const kpis = [
     color: 'text-blue-600 dark:text-blue-400',
   },
   {
-    metric: '관측성: 사후 → 사전 감지',
-    detail: 'Datadog 에러율·로그 모니터링 + Slack 알림',
-    note: '장애를 고객보다 먼저 인지하고, 알림에서 바로 트레이스·로그로 진입해 원인 파악',
+    metric: '이상 감지 → AI 자동 원인분석',
+    detail: 'OpenSearch·Datadog 이상 감지 → Slack → 에이전트가 웹·데이터 검색으로 원인 규명',
+    note: '알림에서 끝나지 않고 “왜 이런 변화가 생겼는지”까지 에이전트가 자동으로 조사·설명',
     color: 'text-green-600 dark:text-green-400',
   },
   {

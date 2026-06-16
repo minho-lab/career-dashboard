@@ -5,7 +5,7 @@
   "careerStartYear": 2017,
   "careerStartMonth": 5,
   "summary": "이커머스, 물류, 패션 도메인에서 Spring Boot 기반 시스템을 설계하고 운영해온 백엔드 개발자입니다. 가장 최근에는 이커머스 OMS의 레거시 프로시저를 헥사고날 아키텍처로 전환하고, 클레임 자동화로 CS 문의 67% 감소, 출고후취소 95% 감소(연간 2,000만원+ 비용 절감) 등 비즈니스 임팩트를 만들어냈습니다. '구조를 개선하되 운영을 멈추지 않는' 점진적 전환을 선호하고, 최근에는 Claude Code + MCP 서버를 구축하여 AI 기반 개발 워크플로우를 실무에 도입하고 있습니다.",
-  "skills": "Java, Spring Boot, JPA/Hibernate, MyBatis, PostgreSQL, Oracle, AWS (SQS, S3, ECS), Docker, Spring Batch, Spring Cloud Dataflow, Feign Client, Datadog, 헥사고날 아키텍처, CQRS, 이벤트 기반 설계, 관측성(Observability), Claude Code/MCP",
+  "skills": "Java, Spring Boot, JPA/Hibernate, MyBatis, PostgreSQL, Oracle, AWS (SQS, S3, ECS), Docker, Spring Batch, Spring Cloud Dataflow, Feign Client, Datadog, OpenSearch, 헥사고날 아키텍처, CQRS, 이벤트 기반 설계, 관측성(Observability), Claude Code/MCP",
   "career": [
     {
       "company": "F&F",
