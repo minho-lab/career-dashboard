@@ -32,27 +32,27 @@ const careerYears = computed(() => {
 // 면접관이 30초 안에 봐야 할 비즈니스 임팩트 — 회사 전용 용어는 한 줄 풀이를 함께 표기
 const kpis = [
   {
-    metric: 'CS 문의 67% ↓',
-    detail: '월 85.7건 → 28.3건',
-    note: '반품·교환 처리 중 반복되던 IT 문의를 자동화로 제거',
-    color: 'text-blue-600 dark:text-blue-400',
-  },
-  {
-    metric: '출고후취소 95% ↓',
-    detail: '월 632건 → 20~50건 · 연 2,000만원+ 절감',
-    note: '이미 출고(배송 시작)된 주문의 취소 — 왕복 택배비가 드는 가장 비싼 취소 유형',
-    color: 'text-green-600 dark:text-green-400',
-  },
-  {
-    metric: '6채널 → 단일 도메인',
-    detail: '헥사고날 Port/Adapter로 채널별 API 격리',
-    note: '판매채널마다 다른 외부 데이터 형식이 바뀌어도 도메인 로직은 일관되게 유지',
+    metric: '19채널 → 단일 도메인',
+    detail: '89개 스토어 · 헥사고날 Port/Adapter로 채널별 API 격리',
+    note: '자사몰·무신사·네이버·제휴몰 등 외부 데이터 형식이 제각각이어도 도메인 로직은 일관되게 유지',
     color: 'text-indigo-600 dark:text-indigo-400',
   },
   {
-    metric: '팀 AI 도구 플랫폼',
-    detail: '플러그인 4 · 스킬 16 · 가이드 68문서',
-    note: '팀 전체가 쓰는 Claude Code 플러그인 마켓플레이스를 직접 구축·운영',
+    metric: '상시 서버 → 온디맨드 배치',
+    detail: 'Spring Cloud Data Flow 컨테이너 기동/종료',
+    note: '스케줄에 맞춰 Docker를 띄우고 잡이 끝나면 내려 — 인프라도 필요할 때만 존재하게 설계',
+    color: 'text-blue-600 dark:text-blue-400',
+  },
+  {
+    metric: '관측성: 사후 → 사전 감지',
+    detail: 'Datadog 에러율·로그 모니터링 + Slack 알림',
+    note: '장애를 고객보다 먼저 인지하고, 알림에서 바로 트레이스·로그로 진입해 원인 파악',
+    color: 'text-green-600 dark:text-green-400',
+  },
+  {
+    metric: 'AI 에이전트 4종 실운영·구축',
+    detail: '클레임 자동화 · CS · 비즈니스 분석 + 팀 플러그인 플랫폼',
+    note: 'Mac mini 셀프호스팅·Slack 연동으로 실제 운영 중, 팀 AI 도구 플랫폼까지 직접 구축',
     color: 'text-purple-600 dark:text-purple-400',
   },
 ]
