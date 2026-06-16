@@ -71,6 +71,7 @@ const projectTech = computed(() =>
   <div v-if="profile" class="space-y-24">
     <!-- Hero -->
     <section class="text-center pt-14 pb-4">
+      <p class="text-xs text-gray-400 dark:text-gray-500 mb-4">📱 이 문구는 휴대폰을 통해 수정했습니다.</p>
       <div class="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
         <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
         Backend &amp; AI Agent Engineer · {{ careerYears }}년차
