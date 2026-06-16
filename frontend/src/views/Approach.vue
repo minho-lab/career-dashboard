@@ -19,7 +19,7 @@ onMounted(async () => {
 const categoryMap = {
   'Java': 'Backend', 'Spring Boot': 'Backend', 'JPA/Hibernate': 'Backend', 'MyBatis': 'Backend',
   'Spring Batch': 'Backend', 'Spring Cloud Dataflow': 'Backend', 'Feign Client': 'Backend',
-  'PostgreSQL': 'Database', 'Oracle': 'Database',
+  'PostgreSQL': 'Database',
   'AWS (SQS, S3, ECS)': 'Cloud/Infra', 'Docker': 'Cloud/Infra', 'Datadog': 'Cloud/Infra', 'OpenSearch': 'Cloud/Infra', '관측성(Observability)': 'Cloud/Infra',
   'CQRS': 'Architecture', '헥사고날 아키텍처': 'Architecture', '이벤트 기반 설계': 'Architecture',
   'Claude Code/MCP': 'AI/Tools',
@@ -31,7 +31,7 @@ function guessCategory(skill) {
   if (categoryMap[skill]) return categoryMap[skill]
   const s = skill.toLowerCase()
   if (['java', 'spring', 'jpa', 'mybatis', 'batch', 'feign', 'dataflow'].some(k => s.includes(k))) return 'Backend'
-  if (['sql', 'postgres', 'oracle', 'redis', 'db'].some(k => s.includes(k))) return 'Database'
+  if (['sql', 'postgres', 'redis', 'db'].some(k => s.includes(k))) return 'Database'
   if (['aws', 'docker', 'ecs', 'sqs', 's3', 'cloud', 'infra'].some(k => s.includes(k))) return 'Cloud/Infra'
   if (['아키텍처', 'cqrs', 'event', '이벤트', '설계', 'ddd', 'hexagonal'].some(k => s.includes(k))) return 'Architecture'
   if (['ai', 'claude', 'mcp', 'llm'].some(k => s.includes(k))) return 'AI/Tools'
