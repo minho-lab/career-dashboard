@@ -20,7 +20,7 @@ const categoryMap = {
   'Java': 'Backend', 'Spring Boot': 'Backend', 'JPA/Hibernate': 'Backend', 'MyBatis': 'Backend',
   'Spring Batch': 'Backend', 'Spring Cloud Dataflow': 'Backend', 'Feign Client': 'Backend',
   'PostgreSQL': 'Database', 'Oracle': 'Database',
-  'AWS (SQS, S3, ECS)': 'Cloud/Infra', 'Docker': 'Cloud/Infra',
+  'AWS (SQS, S3, ECS)': 'Cloud/Infra', 'Docker': 'Cloud/Infra', 'Datadog': 'Cloud/Infra', '관측성(Observability)': 'Cloud/Infra',
   'CQRS': 'Architecture', '헥사고날 아키텍처': 'Architecture', '이벤트 기반 설계': 'Architecture',
   'Claude Code/MCP': 'AI/Tools',
 }
