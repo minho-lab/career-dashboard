@@ -39,15 +39,15 @@ const kpis = [
   },
   {
     metric: '출고후취소 95% ↓',
-    detail: '월 632건 → 20~50건',
+    detail: '월 632건 → 20~50건 · 연 2,000만원+ 절감',
     note: '이미 출고(배송 시작)된 주문의 취소 — 왕복 택배비가 드는 가장 비싼 취소 유형',
     color: 'text-green-600 dark:text-green-400',
   },
   {
-    metric: '연 2,000만원+ 절감',
-    detail: '택배 회수비 등 운영비용',
-    note: '취소·반품 자동화로 절감한 직접 비용',
-    color: 'text-amber-600 dark:text-amber-400',
+    metric: '6채널 → 단일 도메인',
+    detail: '헥사고날 Port/Adapter로 채널별 API 격리',
+    note: '판매채널마다 다른 외부 데이터 형식이 바뀌어도 도메인 로직은 일관되게 유지',
+    color: 'text-indigo-600 dark:text-indigo-400',
   },
   {
     metric: '팀 AI 도구 플랫폼',
